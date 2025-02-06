@@ -1,12 +1,25 @@
 package com.restaurant.U5_W1_L4.menu;
 
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-public interface ElementoMenu{
+@Entity
+@Table(name = "elementi_menu")
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class ElementoMenu {
 
-    public String getNome();
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private long id;
 
-    public double getPrezzo();
+    private String nome;
 
-    public int getCalorie();
+    private double prezzo;
 
+    private int calorie;
 }

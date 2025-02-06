@@ -10,18 +10,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Topping implements ElementoMenu {
+public class Topping extends ElementoMenu {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private long id;
 	private String nomeTopping;
 	private int calorie;
 	private double prezzo;
-
-	@Override
-	public String getNome() {
-		return nomeTopping;
-	}
 
 }

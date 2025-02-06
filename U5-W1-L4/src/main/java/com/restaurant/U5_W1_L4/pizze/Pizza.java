@@ -15,20 +15,13 @@ import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class Pizza implements ElementoMenu {
+public class Pizza extends ElementoMenu {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private long id;
     private String nomePizza;
     private int calorie;
     private double prezzo;
     @OneToMany(mappedBy = "nomeTopping")
     List<Topping> toppings = new ArrayList<>();
 
-    @Override
-    public String getNome() {
-        return nomePizza;
-    }
 
 }
