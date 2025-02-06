@@ -13,7 +13,7 @@ import lombok.NoArgsConstructor;
 public class Topping implements ElementoMenu {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private long id;
 	private String nomeTopping;
 	private int calorie;
@@ -23,4 +23,5 @@ public class Topping implements ElementoMenu {
 	public String getNome() {
 		return nomeTopping;
 	}
+
 }

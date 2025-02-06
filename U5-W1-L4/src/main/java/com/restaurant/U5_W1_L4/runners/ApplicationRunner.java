@@ -25,12 +25,10 @@ public class ApplicationRunner implements CommandLineRunner {
 		System.out.println(menuPranzo);
 
 		Tavolo tavolo = new Tavolo();
-		tavolo.setNumeroTavolo(1);
 		tavolo.setNumeroMaxCoperti(4);
 		tavolo.setStatoTavolo(StatoTavolo.LIBERO);
 
 		Ordine ordine = new Ordine();
-		ordine.setNumeroOrdine(1);
 		ordine.setTavolo(tavolo);
 		ordine.setStatoOrdine(StatoOrdine.IN_CORSO);
 		ordine.setNumeroCoperti(2);

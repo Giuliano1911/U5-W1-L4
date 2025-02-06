@@ -11,23 +11,24 @@ import lombok.NoArgsConstructor;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity(name="pizze")
+@Entity(name = "pizze")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class Pizza implements ElementoMenu {
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private long id;
-	private String nomePizza;
-	private int calorie;
-	private double prezzo;
-	@OneToMany(mappedBy = "nomeTopping")
-	List<Topping> toppings = new ArrayList<>();
+    @Id
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
+    private long id;
+    private String nomePizza;
+    private int calorie;
+    private double prezzo;
+    @OneToMany(mappedBy = "nomeTopping")
+    List<Topping> toppings = new ArrayList<>();
 
-	@Override
-	public String getNome() {
-		return nomePizza;
-	}
+    @Override
+    public String getNome() {
+        return nomePizza;
+    }
+
 }

@@ -2,6 +2,7 @@ package com.restaurant.U5_W1_L4.ordini;
 
 import com.restaurant.U5_W1_L4.menu.ElementoMenu;
 import com.restaurant.U5_W1_L4.tavoli.Tavolo;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -14,12 +15,15 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Ordine {
-	private int numeroOrdine;
+
+	private long id;
 	private Tavolo tavolo;
 	private StatoOrdine statoOrdine;
 	private int numeroCoperti;
 	private LocalDateTime oraAcquisizione = LocalDateTime.now();
 	private List<ElementoMenu> elementiOrdine = new ArrayList<>();
+
+
 	private double costoCoperto = 0.0;
 
 	public double calcolaCostoCoperto(){
@@ -29,7 +33,7 @@ public class Ordine {
 	}
 
 	public void stampaOrdine(){
-		System.out.println("Numero ordine: " + numeroOrdine);
+		System.out.println("Numero ordine: " + id);
 		System.out.println("Tavolo: " + tavolo);
 		System.out.println("Stato ordine: " + statoOrdine);
 		System.out.println("Numero coperti: " + numeroCoperti);
