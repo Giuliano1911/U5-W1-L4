@@ -29,6 +29,7 @@ public class CreateDbRunner implements CommandLineRunner {
     private final Pizza capricciosa;
     private final Topping mozzarella;
     private final Bevanda aranciata;
+    private final Bevanda coca_cola;
 
     private final Menu menuPranzo;
 
@@ -40,12 +41,15 @@ public class CreateDbRunner implements CommandLineRunner {
     public void run(String... args) throws Exception {
 
         bevandaRepository.save(aranciata);
+        bevandaRepository.save(coca_cola);
 
         toppingRepository.save(mozzarella);
 
         pizzaRepository.save(capricciosa);
 
         System.out.println(bevandaRepository.findById(1L));
+        System.out.println(bevandaRepository.findByNomeBevanda("Aranciata"));
+        System.out.println(bevandaRepository.findByCalorieLessThan(1050));
         System.out.println(pizzaRepository.findAll());
 
         Tavolo tavolo = new Tavolo();
